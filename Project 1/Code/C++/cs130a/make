@@ -1,0 +1,10 @@
+all: AVL BST test
+
+BST: BST.cpp
+	g++ BST.cpp -o BST
+
+AVL: AVL.cpp
+	g++ AVL.cpp -o AVL
+
+test: testing.cpp
+	g++ testing.cpp -o test

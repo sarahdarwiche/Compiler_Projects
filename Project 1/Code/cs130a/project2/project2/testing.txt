@@ -1,0 +1,30 @@
+Run Times for BST, AVL, and Splay Tree: 
+1st test: inserting numbers in increasing order up to 10,000 
+N = 1000
+Binary Search Tree: 0.07 seconds 
+AVL Tree: 0.03 seconds 
+N = 2000
+Binary Search Tree: 0.21 seconds 
+AVL Tree: 0.09 seconds 
+N = 3000
+Binary Search Tree: 0.41 seconds 
+AVL Tree: 0.12 seconds 
+N = 4000
+Binary Search Tree: 0.67 seconds 
+AVL Tree: 0.18 seconds 
+N = 5000
+Binary Search Tree: 1.03 seconds 
+AVL Tree: 0.28 seconds 
+N = 6000
+Binary Search Tree: 1.6 seconds 
+AVL Tree: 0.24 seconds 
+N = 7000
+Binary Search Tree: 2.08 seconds 
+AVL Tree: 0.47 seconds 
+N = 8000
+Binary Search Tree: 2.7 seconds 
+AVL Tree: 0.35 seconds 
+N = 9000
+Binary Search Tree: 3.46 seconds 
+AVL Tree: 0.4 seconds 
+N = 10000

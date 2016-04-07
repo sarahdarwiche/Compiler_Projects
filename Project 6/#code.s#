@@ -1,0 +1,145 @@
+.data
+printstr: .asciz "%d\n"
+.text 
+  .globl Main_main
+Main_fib:
+  # Prologue
+  push %ebp
+  mov %esp, %ebp
+  sub $4, %esp
+  push %ebx
+  push %edi
+  push %esi
+# If
+  push 8(%ebp)
+  push $1
+  # Less Than or Equal
+pop %eax
+pop %ebx
+cmp %eax, %ebx
+jle label2
+  push $0
+jmp label3
+label2: push $1
+label3:
+pop %eax
+mov $0, %ebx
+cmp %ebx, %eax
+je label0
+# Assignment
+  push $1
+  pop -4(%ebp)
+jmp label1
+label0:
+# Assignment
+  push %ecx
+  push %edx
+  push 8(%ebp)
+  push $1
+  # Minus
+  pop %edx
+  pop %eax
+  sub %edx, %eax
+  push %eax
+  push 8(%ebp)
+  push 8(%ebp)
+  add $8, %esp
+  pop %edx
+  pop %ecx
+  push %eax
+  push %ecx
+  push %edx
+  push 8(%ebp)
+  push $2
+  # Minus
+  pop %edx
+  pop %eax
+  sub %edx, %eax
+  push %eax
+  push 8(%ebp)
+  push 8(%ebp)
+  add $8, %esp
+  pop %edx
+  pop %ecx
+  push %eax
+  # Plus
+  pop %edx
+  pop %eax
+  add %edx, %eax
+  push %eax
+  pop -4(%ebp)
+label1:
+  push -4(%ebp)
+  # Epilogue
+  pop %eax
+  pop %esi
+  pop %edi
+  pop %ebx
+  mov %ebp, %esp
+  pop %ebp
+  ret
+Main_main:
+  # Prologue
+  push %ebp
+  mov %esp, %ebp
+  sub $0, %esp
+  push %ebx
+  push %edi
+  push %esi
+  push %ecx
+  push %edx
+  push $1
+  push 8(%ebp)
+  push 8(%ebp)
+  add $8, %esp
+  pop %edx
+  pop %ecx
+  push %eax
+# Print
+push $printstr
+call printf
+  push %ecx
+  push %edx
+  push $2
+  push 8(%ebp)
+  push 8(%ebp)
+  add $8, %esp
+  pop %edx
+  pop %ecx
+  push %eax
+# Print
+push $printstr
+call printf
+  push %ecx
+  push %edx
+  push $3
+   push 8(%ebp)
+  push 8(%ebp)
+  add $8, %esp
+  pop %edx
+  pop %ecx
+  push %eax
+# Print
+push $printstr
+call printf
+  push %ecx
+  push %edx
+  push $4
+  push 8(%ebp)
+  push 8(%ebp)
+  add $8, %esp
+  pop %edx
+  pop %ecx
+  push %eax
+# Print
+push $printstr
+call printf
+  push $0
+  # Epilogue
+  pop %eax
+  pop %esi
+  pop %edi
+  pop %ebx
+  mov %ebp, %esp
+  pop %ebp
+  ret

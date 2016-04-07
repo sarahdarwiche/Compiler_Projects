@@ -1,0 +1,16 @@
+#ifndef QUASH_H
+#define QUASH_H 
+
+using namespace std;
+
+class Quash{
+ public:
+  bool empty();
+  void insert(int i);
+  
+  void print();
+
+ 
+};
+
+#endif

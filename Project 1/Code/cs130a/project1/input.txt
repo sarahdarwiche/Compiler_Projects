@@ -1,0 +1,16 @@
+insert 10
+print
+insert 20
+print
+insert -10
+print
+deleteMin
+print
+insert -30
+print
+lookup 10
+print
+delete 10
+print
+delete 10
+print

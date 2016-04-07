@@ -1,0 +1,180 @@
+#include <stdio.h>
+#include <iostream>
+#include <string.h>
+#include <cstdlib>
+#include <fstream>
+
+using namespace std;
+
+static int count;
+
+void insert(int i);
+bool lookup(int i);
+int deleteMin();
+void delete_element(int i);
+void print();
+
+class Node {
+  public:
+	int value;
+	Node *next;
+};
+
+class LinkedList{
+public:
+  Node *head;
+  LinkedList(){ head = NULL;}
+  void addHead(int v){
+    Node *l = new Node();
+    l->value = v;
+    if (head == NULL)
+      {
+	head = l;
+	head->next = NULL;
+      }
+    else
+      {
+	l->next = head;
+	head = l;
+      }
+  }
+};
+
+LinkedList *list = new LinkedList();
+
+class Hash_table{
+public:
+  int key;
+  int value;
+  bool empty;
+  
+  Hash_table(){
+    empty = true;
+  }
+  int find_in_hash(int i);
+  void remove_in_hash(int i);
+  int hash(int i){ return key = i % 43;}
+  void insert_in_hash(int i);
+  bool is_empty() { return empty;}
+
+  
+};
+
+class Heap{
+
+public:
+  int value;
+  bool empty;
+  Heap(){
+    empty = true;
+  }
+  void insert_in_heap(int i);
+  int find_in_heap(int i);
+  void print_heap();
+  void remove_in_heap(int i);
+  bool is_empty() { return empty;}
+  
+  
+};
+
+ Heap hp[50];
+ Hash_table ht[43];
+
+
+  int main (int argc, char* argv[])
+ {
+   if (argc != 2)
+     {
+       cout << "Error in file" << endl;
+       return -1;
+     }
+ 
+  char* filename = argv[1];
+  ifstream myfile(filename);
+  
+
+
+  while(myfile){
+    string line = "";
+    string command = "";
+    string num = "";
+    bool after_space = false;
+    int number_as_integer = 0;
+  
+    
+
+  
+      
+     getline( myfile, line );
+     if(myfile.eof()) return -1;
+	      
+     for(int i=0; i < line.length(); i++){
+       
+       if ( line[i] != ' ' && after_space == false ){
+	 command = command + line[i];
+       }
+       else{
+	 after_space = true;
+       }
+       if( line[i] != ' ' && after_space == true ) num = num + line[i];
+     }
+     number_as_integer = atoi(num.c_str());
+     
+     if(command == "insert") insert(number_as_integer); 
+     if(command == "lookup") lookup(number_as_integer);
+     if(command == "deleteMin") deleteMin();
+     if(command == "delete") delete_element(number_as_integer);
+     if(command == "print") print();
+     
+     
+     cout << command << endl;
+     cout << number_as_integer << endl;
+  
+ 
+   
+  }
+  myfile.close();
+  return 0;
+  
+  
+ }
+
+
+void insert(int i){
+}
+
+bool lookup(int i){
+  return false;
+}
+
+int deleteMin(){
+  return 0;
+}
+
+void delete_element(int i){
+
+  /*if( ht.find_in_hash(i) == true ){
+    count--;
+    if (count > 0) {
+      cout << "item count decremented, new count =" << count << endl;
+    }
+    else{
+      cout << "item successfully deleted" << endl;
+    }
+  }
+  
+  else{
+    cout << "item not present in table"<< endl;
+    }*/
+
+  }
+
+void print(){
+for(int i=0; i<50; i++){
+  if(!hp[i].is_empty()) cout << hp[i].value  << " " << endl;
+ }
+
+}
+
+
+
