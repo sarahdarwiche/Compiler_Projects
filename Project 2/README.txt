@@ -1,4 +1,2 @@
-Sarah Darwiche
-sarahadarwiche@gmail.com
-perm = 6031843
+Implemented a calculator with correct syntax properties and order of operations.
 
