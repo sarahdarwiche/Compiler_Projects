@@ -1,4 +1,2 @@
-Sarah Darwiche
-sarahadarwiche@gmail.com
-perm = 6031843
+Created lexer and parser for code generation language.
 
